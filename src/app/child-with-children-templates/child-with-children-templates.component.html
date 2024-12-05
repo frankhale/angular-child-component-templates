@@ -1,0 +1,11 @@
+<ng-template #childTemplate>
+  <p>{{ title() }}</p>
+
+  <div *ngFor="let child of childTemplateComponents()">
+    @if (child.show()) {
+      <ng-container *ngTemplateOutlet="child.template()"></ng-container>
+    }
+  </div>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="childTemplate"></ng-container>
